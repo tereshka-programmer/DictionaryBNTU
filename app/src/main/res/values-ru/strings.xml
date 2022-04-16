@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tag_of_eng">Английский</string>
+    <string name="tag_of_rus">Русский</string>
+    <string name="tag_of_chin">Китайский</string>
+    <string name="enter_text">Введите термин</string>
+</resources>

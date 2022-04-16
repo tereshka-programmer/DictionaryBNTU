@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tag_of_chin">中文</string>
+    <string name="tag_of_rus">俄语</string>
+    <string name="tag_of_eng">英语</string>
+    <string name="enter_text">输入术语</string>
+</resources>
