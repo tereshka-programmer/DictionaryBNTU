@@ -11,4 +11,5 @@
     <color name="gray">#DDDDDD</color>
     <color name="green">#008A5E</color>
     <color name="click_button_color">#F4FFF3</color>
+    <color name="error">#FF1123</color>
 </resources>

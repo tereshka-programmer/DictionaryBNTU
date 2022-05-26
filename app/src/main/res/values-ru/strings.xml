@@ -4,4 +4,6 @@
     <string name="tag_of_rus">Русский</string>
     <string name="tag_of_chin">Китайский</string>
     <string name="enter_text">Введите термин</string>
+    <string name="error_no_such_word">Нет такого термина</string>
+    <string name="error_no_term">Поле ввода не заполнено</string>
 </resources>

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:background="@color/white"
     >
 
     <Spinner
@@ -106,7 +107,7 @@
                 android:fontFamily="@font/rokkitt_regular"
                 android:text="@string/first_translate_rus"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
         </LinearLayout>
 
         <Space
@@ -164,6 +165,17 @@
                 android:textSize="20sp" />
         </LinearLayout>
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/spacex"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <EditText
@@ -174,27 +186,52 @@
         android:background="@drawable/spinner_back"
         android:ems="10"
         android:fontFamily="@font/rokkitt_regular"
-        android:inputType="textAutoCorrect|textAutoComplete"
-        android:paddingStart="16dp"
         android:hint="@string/enter_text"
+        android:imeOptions="actionSearch"
+        android:inputType="textAutoCorrect|textAutoComplete"
+        android:onClick="tapOnED"
+        android:paddingStart="16dp"
+        android:cursorVisible="false"
         android:textColor="@color/back_gray"
         app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
         app:layout_constraintStart_toStartOf="@+id/constraintLayout"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        android:imeOptions="actionSearch"
-         />
-
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
 
     <ImageView
         android:id="@+id/question"
-        android:layout_width="32dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_margin="16dp"
-        android:layout_height="32dp"
-        android:clickable="true"
         android:background="?android:attr/selectableItemBackgroundBorderless"
-        app:layout_constraintStart_toStartOf="parent"
+        android:clickable="true"
+        android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:srcCompat="@drawable/ic_question"
-        android:focusable="true" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_question" />
+
+    <TextView
+        android:id="@+id/tvErrorNSW"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/error_no_such_word"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/error"
+        android:visibility="gone"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edWord" />
+
+    <TextView
+        android:id="@+id/tvErrorNT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/error_no_term"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/error"
+        android:visibility="gone"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edWord" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

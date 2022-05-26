@@ -4,4 +4,6 @@
     <string name="tag_of_rus">俄语</string>
     <string name="tag_of_eng">英语</string>
     <string name="enter_text">输入术语</string>
+    <string name="error_no_such_word">没有这样的术语</string>
+    <string name="error_no_term">输入字段为空</string>
 </resources>

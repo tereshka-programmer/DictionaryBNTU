@@ -11,6 +11,9 @@
     <string name="first_translate_rus" translatable="false">Перевод</string>
     <string name="first_translate_сhin" translatable="false">翻译</string>
     <string name="transcrip_сhin" translatable="false">转录/转录</string>
+    <string name="error_no_such_word">No such term</string>
+    <string name="error_no_term">Input field is empty</string>
+
 
     <string-array name="languages_arr">
         <item>English</item>
