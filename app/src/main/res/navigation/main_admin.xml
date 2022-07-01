@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_admin"
+    app:startDestination="@id/mainAdminFragment">
+
+    <fragment
+        android:id="@+id/mainAdminFragment"
+        android:name="com.example.dictionary.screens.MainAdminFragment"
+        android:label="main_admin_fragment"
+        tools:layout="@layout/main_admin_fragment" />
+</navigation>

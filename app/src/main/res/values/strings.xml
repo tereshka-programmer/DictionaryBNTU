@@ -13,6 +13,14 @@
     <string name="transcrip_сhin" translatable="false">转录/转录</string>
     <string name="error_no_such_word">No such term</string>
     <string name="error_no_term">Input field is empty</string>
+    <string name="rcv_tag_ru" translatable="false">Ru:</string>
+    <string name="rcv_tag_en" translatable="false">En:</string>
+    <string name="rcv_tag_ch" translatable="false">Ch:</string>
+    <string name="editor_name" translatable="false">Editor</string>
+    <string name="home" translatable="false">Home</string>
+    <string name="editors" translatable="false">Editors</string>
+    <string name="words" translatable="false">Words</string>
+    <string name="error_login">Invalid login or password</string>
 
 
     <string-array name="languages_arr">

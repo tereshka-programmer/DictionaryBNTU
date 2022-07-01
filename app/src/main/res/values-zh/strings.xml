@@ -6,4 +6,5 @@
     <string name="enter_text">输入术语</string>
     <string name="error_no_such_word">没有这样的术语</string>
     <string name="error_no_term">输入字段为空</string>
+    <string name="error_login">登入或密码不正确</string>
 </resources>

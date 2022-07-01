@@ -8,7 +8,7 @@ object RetrofitInstance {
 
     val api: WordApi by lazy {
         Retrofit.Builder()
-            .baseUrl("http://192.168.0.102:8080")
+            .baseUrl("http://172.20.10.2:8080")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(WordApi::class.java)

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/chWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="2dp"
+        android:text="@string/first_translate_сhin"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/chTag"
+        app:layout_constraintTop_toBottomOf="@+id/ruWord" />
+
+    <TextView
+        android:id="@+id/enTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/rcv_tag_en"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ruTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/rcv_tag_ru"
+        app:layout_constraintStart_toStartOf="@+id/enTag"
+        app:layout_constraintTop_toBottomOf="@+id/enTag" />
+
+    <TextView
+        android:id="@+id/chTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rcv_tag_ch"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="@+id/ruTag"
+        app:layout_constraintTop_toBottomOf="@+id/ruTag" />
+
+    <TextView
+        android:id="@+id/enWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="6dp"
+        android:text="@string/first_translate_eng"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/enTag"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ruWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="2dp"
+        android:text="@string/first_translate_rus"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/ruTag"
+        app:layout_constraintTop_toBottomOf="@+id/enWord" />
+
+    <TextView
+        android:id="@+id/chTranscrip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/transcrip_сhin"
+        android:layout_marginStart="6dp"
+        app:layout_constraintBottom_toBottomOf="@+id/chWord"
+        app:layout_constraintStart_toEndOf="@+id/chWord"
+        app:layout_constraintTop_toTopOf="@+id/chWord" />
+
+    <ImageView
+        android:id="@+id/icMoreWordItem"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:clickable="true"
+        android:layout_marginEnd="16dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic__more_vert"
+        android:focusable="true" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="chWord" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        app:layout_constraintTop_toBottomOf="@id/barrier"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

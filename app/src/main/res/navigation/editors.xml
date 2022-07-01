@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/editors"
+    app:startDestination="@id/editorsFragment">
+
+    <fragment
+        android:id="@+id/editorsFragment"
+        android:name="com.example.dictionary.screens.EditorsFragment"
+        android:label="editors_fragment"
+        tools:layout="@layout/editors_fragment" />
+</navigation>

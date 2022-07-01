@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        app:srcCompat="@drawable/ic_icon_bntu" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:fontFamily="@font/rokkitt_light"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <EditText
+        android:id="@+id/edLogin"
+        android:layout_width="220dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="94dp"
+        android:background="@drawable/edt_background"
+        android:fontFamily="@font/rokkitt_light"
+        android:inputType="textPersonName"
+        android:paddingStart="8dp"
+        android:hint="@string/app_login"
+        android:textColorHint="@color/gray"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="RtlSymmetry,TouchTargetSizeCheck"
+        />
+
+    <EditText
+        android:id="@+id/edPassword"
+        android:layout_width="220dp"
+        android:layout_height="42dp"
+        android:background="@drawable/edt_background"
+        android:fontFamily="@font/rokkitt_light"
+        android:inputType="textPassword"
+        android:paddingStart="8dp"
+        android:layout_marginTop="10dp"
+        android:hint="@string/app_password"
+        android:textColorHint="@color/gray"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/edLogin"
+        app:layout_constraintStart_toStartOf="@+id/edLogin"
+        app:layout_constraintTop_toBottomOf="@+id/edLogin"
+        tools:ignore="RtlSymmetry,TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/btSignIn"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/button_backgrond"
+        android:text="@string/sign_in"
+        android:textSize="16sp"
+        android:fontFamily="@font/rokkitt_light"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/edPassword"
+        app:layout_constraintStart_toStartOf="@+id/edPassword"
+        app:layout_constraintTop_toBottomOf="@+id/edPassword" />
+
+    <TextView
+        android:id="@+id/errorLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/error_login"
+        android:textColor="@color/error"
+        android:fontFamily="@font/rokkitt_regular"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/edLogin"
+        app:layout_constraintEnd_toEndOf="@+id/edLogin"
+        app:layout_constraintStart_toStartOf="@+id/edLogin" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

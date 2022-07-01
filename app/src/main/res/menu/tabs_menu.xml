@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/main_admin"
+        android:title="@string/home"
+        android:icon="@drawable/ic_home"/>
+    <item android:id="@id/editors"
+        android:title="@string/editors"
+        android:icon="@drawable/ic_users"/>
+    <item android:id="@id/words_list"
+        android:title="@string/words"
+        android:icon="@drawable/ic_word_list"/>
+</menu>

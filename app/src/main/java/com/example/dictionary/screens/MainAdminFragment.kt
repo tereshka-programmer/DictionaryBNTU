@@ -1,39 +1,35 @@
-package com.example.dictionary
-
+package com.example.dictionary.screens
 
 import android.app.AlertDialog
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
-
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.AdapterView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import com.example.dictionary.databinding.ActivityMainBinding
+import com.example.dictionary.R
+import com.example.dictionary.databinding.MainAdminFragmentBinding
 import com.example.dictionary.model.Word
 import com.example.dictionary.retrofit.RetrofitInstance
 import retrofit2.HttpException
 import java.io.IOException
 
+class MainAdminFragment : Fragment(R.layout.main_admin_fragment) {
+    private lateinit var binding: MainAdminFragmentBinding
 
-class MainActivity : AppCompatActivity() {
+    private var languageCode = ""
 
-
-    private lateinit var binding : ActivityMainBinding
-
-    var languageCode = ""
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = MainAdminFragmentBinding.bind(view)
 
 
         binding.spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -53,20 +49,28 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.edWord.setOnEditorActionListener { v, actionId, event ->
+            binding.tvErrorNSW.isVisible = false
+            binding.tvErrorNT.isVisible = false
+            binding.edWord.setBackgroundResource(R.drawable.spinner_back)
             return@setOnEditorActionListener when (actionId) {
                 EditorInfo.IME_ACTION_SEARCH -> {
-                    hideSoftKeyboard(binding.edWord)
+                    hideKeyboard(binding.edWord)
                     getWord(binding.edWord.text.toString().lowercase())
                     true
                 }
                 else -> false
             }
         }
+
     }
 
-    private fun hideSoftKeyboard(view: View) {
-        val manager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-        manager.hideSoftInputFromWindow(view.windowToken, 0)
+    private fun hideKeyboard(view: View){
+        getInputMethodManager(view).hideSoftInputFromWindow(view.windowToken, 0)
+    }
+
+    private fun getInputMethodManager(view: View): InputMethodManager {
+        val context = requireContext()
+        return context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
     }
 
     private fun getWord(word: String){
@@ -87,7 +91,7 @@ class MainActivity : AppCompatActivity() {
             } catch (e: IOException) {
                 Log.e("MainAct", "IOException, you might not have internet connection")
 
-                AlertDialog.Builder(this@MainActivity)
+                AlertDialog.Builder(requireContext())
                     .setCancelable(true)
                     .setTitle("Error")
                     .setMessage("The Internet may be turned off, or this is our problem, we will fix it soon")
@@ -98,6 +102,12 @@ class MainActivity : AppCompatActivity() {
                 return@launchWhenCreated
             } catch (e: HttpException) {
                 Log.e("MainAct", "HttpException, unexpected response")
+                AlertDialog.Builder(requireContext())
+                    .setCancelable(true)
+                    .setTitle("Error")
+                    .setMessage("Something is wrong, we will fix it soon")
+                    .create()
+                    .show()
                 binding.progressBar.isVisible = false
                 binding.edWord.setBackgroundResource(R.drawable.spinner_back_error)
                 binding.tvErrorNSW.isVisible = true
@@ -120,17 +130,5 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
-    fun tapOnED(view: View){
-        binding.tvErrorNSW.isVisible = false
-        binding.tvErrorNT.isVisible = false
-        binding.edWord.setBackgroundResource(R.drawable.spinner_back)
-    }
-
-    fun clickOnQuestion(view: View){
-        val intent = Intent(this, Spravka::class.java)
-        startActivity(intent)
-    }
-
 
 }
